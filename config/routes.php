@@ -14,3 +14,9 @@ use Hyperf\HttpServer\Router\Router;
 Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 Router::addRoute(['GET'], '/index/info', 'App\Controller\IndexController@info');
 
+// 该 Group 下的所有路由都将应用配置的中间件
+Router::addGroup('/v2', function () {
+    Router::get('/index/profile', [\App\Controller\IndexController::class, 'profile']);
+},
+    ['middleware' => [\App\Middleware\Auth\AuthMiddleware::class]]
+);

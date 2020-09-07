@@ -27,6 +27,7 @@
         "hyperf/redis": "~2.0.0"
     },
     "require-dev": {
+        "symfony/var-dumper": "4.4.*",
         "swoole/ide-helper": "^4.5",
         "friendsofphp/php-cs-fixer": "^2.14",
         "mockery/mockery": "^1.0",
@@ -47,7 +48,9 @@
         "psr-4": {
             "App\\": "app/"
         },
-        "files": []
+        "files": [
+            "app/Utils/common_func.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

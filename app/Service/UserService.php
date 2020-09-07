@@ -9,6 +9,8 @@
 namespace App\Service;
 
 
+use Hyperf\DbConnection\Db;
+
 class UserService
 {
     /**
@@ -18,7 +20,7 @@ class UserService
      */
     public function getInfoById($userId)
     {
-        return $userId;
+        return Db::table('hp_user')->where('id', $userId)->get();
     }
 
 }

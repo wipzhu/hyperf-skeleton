@@ -9,6 +9,7 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace App\Controller;
 
 use App\Service\UserService;
@@ -28,8 +29,8 @@ class IndexController extends AbstractController
     private $userService;
 
     /**
-     * @author wipzhu
      * @return array
+     * @author wipzhu
      */
     public function index()
     {
@@ -37,17 +38,28 @@ class IndexController extends AbstractController
         $method = $this->request->getMethod();
 
         return [
-            'method' => $method,
+            'method'  => $method,
             'message' => "Hello {$user}.",
         ];
     }
 
     /**
-     * @author wipzhu
      * @param RequestInterface $request
      * @return mixed
+     * @author wipzhu
      */
     public function info(RequestInterface $request)
+    {
+        $id = $request->input('id', 1);
+        return $this->userService->getInfoById((int)$id);
+    }
+
+    /**
+     * @param RequestInterface $request
+     * @return mixed
+     * @author wipzhu
+     */
+    public function profile(RequestInterface $request)
     {
         $id = $request->input('id', 1);
         return $this->userService->getInfoById((int)$id);
