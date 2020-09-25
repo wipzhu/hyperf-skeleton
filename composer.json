@@ -24,7 +24,9 @@
         "hyperf/logger": "~2.0.0",
         "hyperf/memory": "~2.0.0",
         "hyperf/process": "~2.0.0",
-        "hyperf/redis": "~2.0.0"
+        "hyperf/redis": "~2.0.0",
+        "hyperf/websocket-server": "^2.0",
+        "hyperf/websocket-client": "^2.0"
     },
     "require-dev": {
         "symfony/var-dumper": "4.4.*",

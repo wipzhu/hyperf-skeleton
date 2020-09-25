@@ -7,6 +7,8 @@
  */
 
 
+use Symfony\Component\VarDumper\VarDumper;
+
 if (!function_exists('pr')) {
     /**
      * @desc 格式化输出调试信息
@@ -35,6 +37,9 @@ if (!function_exists('pr')) {
 
 if (!function_exists('dump')) {
     /**
+     * @param $var
+     * @param mixed ...$moreVars
+     * @return array
      * @author Nicolas Grekas <p@tchwork.com>
      */
     function dump($var, ...$moreVars)

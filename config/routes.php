@@ -20,3 +20,10 @@ Router::addGroup('/v2', function () {
 },
     ['middleware' => [\App\Middleware\Auth\AuthMiddleware::class]]
 );
+
+/**
+ * WebSocket
+ */
+Router::addServer('websocket', function () {
+    Router::get('/', 'App\Controller\Ws\WebSocketController');
+});
