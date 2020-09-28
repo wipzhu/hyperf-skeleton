@@ -32,10 +32,10 @@ class IndexController extends AbstractController
      * @return array
      * @author wipzhu
      */
-    public function index()
+    public function index(RequestInterface $request)
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        $user = $request->input('user', 'Hyperf');
+        $method = $request->getMethod();
 
         return [
             'method'  => $method,
@@ -50,7 +50,7 @@ class IndexController extends AbstractController
      */
     public function info(RequestInterface $request)
     {
-        $id = $request->input('id', 1);
+        $id = $request->input('id', 2);
         return $this->userService->getInfoById((int)$id);
     }
 
